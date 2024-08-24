@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --darker-color: #151515;
+    --dark-color: #303030;
+    --light-color: #eeeeee;
+    --lighter-color: #ffffff;
+
+    --blue-color: #3764f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    user-select: none;
+    list-style: none;
+    color: var(--lighter-color);
+    transition: all .2s ease-in-out;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--darker-color);
+
+    @media (max-width: 992px) {
+        background: var(--dark-color);
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background: var(--dark-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .65);
+    padding: 45px 90px;
+    margin: 45px 0;
+    gap: 45px;
+
+    @media (max-width: 992px) {
+        box-shadow: none;
+    }
+}
+
+main>h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form>input {
+    background: var(--darker-color);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 20px 0 0 20px;
+}
+
+form>input:focus-visible {
+    filter: brightness(.9);
+}
+
+form>button {
+    background: var(--blue-color);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+}
+
+form>button:hover {
+    filter: brightness(.9);
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(4, 128px);
+    }
+
+    @media (max-width: 576px) {
+        grid-template-columns: repeat(2, 128px);
+    }
+}
+
+.grid-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    max-width: 128px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    filter: brightness(.935);
+}
+
+.grid-item>img {
+    max-width: 128px;
+    -webkit-user-drag: none;
+    border-radius: 10px;
+}
+
+.grid-item>p {
+    font-size: .9rem;
+    max-height: 20px;
+    overflow-y: hidden;
+}
+
+.title {
+    max-height: 45px !important;
+}
